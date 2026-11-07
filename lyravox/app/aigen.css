@@ -1,0 +1,48 @@
+/* LYRAVOX AI Generate Lyrics — shared by the Studio and the editor (variables fall back across both themes) */
+.lvai-lock { overflow: hidden; }
+.lvai-overlay { --lp: var(--p, var(--amber, #22d3ee)); --ls: var(--s, var(--cyan, #8b5cf6)); --lbg: var(--panel, #0b1120); --lraised: var(--raised, #111a2e); --lline: var(--line2, #2b3d63); --ltext: var(--text, #e8f1ff); --lmuted: var(--muted, #8c9ebf);
+  position: fixed; inset: 0; z-index: 10000; background: rgba(3, 6, 14, .78); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; padding: 14px; font-family: var(--ui, system-ui, sans-serif); color: var(--ltext); }
+.lvai-box { width: min(980px, 100%); max-height: min(92vh, 900px); display: flex; flex-direction: column; background: linear-gradient(180deg, var(--lraised), var(--lbg)); border: 1px solid var(--lline); border-radius: 16px; box-shadow: 0 30px 90px rgba(0,0,0,.6), 0 0 0 1px rgba(34,211,238,.08); overflow: hidden; }
+.lvai-box header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--lline); }
+.lvai-box h2 { margin: 0; font-size: 1.1rem; letter-spacing: 0; background: linear-gradient(90deg, #22d3ee, #8b5cf6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lvai-x { background: none; border: 0; color: var(--lmuted); font-size: 26px; line-height: 1; cursor: pointer; padding: 0 6px; }
+.lvai-body { padding: 16px 18px; overflow: auto; display: grid; gap: 12px; align-content: start; }
+.lvai-box footer { display: flex; gap: 10px; justify-content: flex-end; align-items: center; flex-wrap: wrap; padding: 12px 18px; border-top: 1px solid var(--lline); background: rgba(0,0,0,.18); }
+.lvai-info { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; margin: 0; font-size: 14px; }
+.lvai-info dt { color: var(--lmuted); } .lvai-info dd { margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lvai-pill { padding: 8px 12px; border-radius: 10px; border: 1px solid var(--lline); font-size: 13px; color: var(--lmuted); background: rgba(255,255,255,.03); }
+.lvai-pill.ok { color: #6ee7b7; border-color: rgba(52,211,153,.4); } .lvai-pill.bad { color: #ff8a96; border-color: rgba(255,90,106,.45); }
+.lvai-err { padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,90,106,.5); background: rgba(255,90,106,.08); color: #ffb3bb; font-size: 14px; display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.lvai-err[hidden], .lvai-stage[hidden] { display: none; }
+.lvai-f { display: grid; gap: 6px; font-size: 13px; color: var(--lmuted); }
+.lvai-f select, .lvai-adv input, .lvai-table input { background: var(--lbg); border: 1px solid var(--lline); color: var(--ltext); border-radius: 8px; padding: 9px 10px; font: 14px var(--ui, system-ui); min-width: 0; }
+.lvai-chk { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: center; font-size: 14px; } .lvai-chk small { grid-column: 2; color: var(--lmuted); font-size: 12px; } .lvai-chk.inline { display: inline-flex; gap: 6px; font-size: 13px; }
+.lvai-chk input { width: 18px; height: 18px; accent-color: #22d3ee; }
+.lvai-adv summary { cursor: pointer; color: var(--lmuted); font-size: 13px; } .lvai-adv { border: 1px solid var(--lline); border-radius: 10px; padding: 10px 12px; }
+.lvai-row { display: flex; gap: 10px; align-items: end; flex-wrap: wrap; margin-top: 10px; font-size: 13px; color: var(--lmuted); } .lvai-row label { display: grid; gap: 4px; } .lvai-row .grow { flex: 1 1 220px; }
+.lvai-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 10px; border: 1px solid var(--lline); background: var(--lraised); color: var(--ltext); font: 600 14px var(--ui, system-ui); cursor: pointer; }
+.lvai-btn:hover:not(:disabled) { border-color: var(--lp); } .lvai-btn:disabled { opacity: .45; cursor: not-allowed; }
+.lvai-btn.pri { background: linear-gradient(90deg, #22d3ee, #8b5cf6); color: #04101a; border: 0; } .lvai-btn.danger:hover { border-color: #ff5a6a; color: #ff8a96; }
+.lvai-bar { height: 10px; border-radius: 10px; background: rgba(255,255,255,.08); overflow: hidden; } .lvai-bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #22d3ee, #8b5cf6); transition: width .4s ease; }
+.lvai-stage { font-size: 15px; } .lvai-stage.small { font-size: 13px; color: var(--lmuted); } .lvai-det { color: #6ee7b7; font-size: 14px; min-height: 1.2em; } .lvai-body small { color: var(--lmuted); }
+.lvai-meta { display: flex; gap: 8px; flex-wrap: wrap; } .chip { padding: 3px 10px; border: 1px solid var(--lline); border-radius: 99px; font-size: 12px; color: var(--lmuted); }
+.lvai-notes { margin: 0; padding: 8px 12px 8px 28px; border-radius: 10px; background: rgba(251,191,36,.08); border: 1px solid rgba(251,191,36,.35); color: #fcd34d; font-size: 13px; }
+.lvai-hint { margin: 0; color: var(--lmuted); font-size: 13px; } .lvai-tools { display: flex; gap: 8px; flex-wrap: wrap; }
+.lvai-table { overflow: auto; border: 1px solid var(--lline); border-radius: 10px; max-height: 46vh; }
+.lvai-table table { border-collapse: collapse; width: 100%; font-size: 14px; } .lvai-table th { position: sticky; top: 0; background: var(--lbg); text-align: left; font-weight: 600; color: var(--lmuted); padding: 8px; font-size: 12px; z-index: 1; }
+.lvai-table td { padding: 5px 6px; border-top: 1px solid rgba(255,255,255,.06); vertical-align: middle; } .lvai-table tr.on td { background: rgba(34,211,238,.12); }
+.lvai-table input.tm { width: 82px; font-family: var(--mono, ui-monospace, monospace); font-size: 13px; text-align: center; } .lvai-table input.tx { width: 100%; min-width: 180px; }
+.lvai-table .empty { text-align: center; color: var(--lmuted); padding: 20px; } .lvai-table td.act { white-space: nowrap; }
+.lvai-ib { width: 30px; height: 30px; margin-right: 3px; border-radius: 8px; border: 1px solid var(--lline); background: transparent; color: var(--ltext); cursor: pointer; font-size: 14px; } .lvai-ib:hover { border-color: var(--lp); color: var(--lp); } .lvai-ib.del:hover { border-color: #ff5a6a; color: #ff8a96; }
+.cf { display: inline-block; min-width: 46px; text-align: center; padding: 2px 6px; border-radius: 99px; font: 600 12px var(--mono, monospace); border: 1px solid transparent; }
+.cf.hi { color: #6ee7b7; border-color: rgba(52,211,153,.4); } .cf.mid { color: #fcd34d; border-color: rgba(251,191,36,.4); } .cf.lo { color: #ff8a96; border-color: rgba(255,90,106,.5); } .cf.na { color: var(--lmuted); border-color: var(--lline); }
+html[lang=bn] .lvai-overlay *, html[data-lang=bn] .lvai-overlay * { letter-spacing: normal !important; text-transform: none !important; }
+.lv-ai-btn { display: inline-flex; align-items: center; gap: 6px; }
+@media (max-width: 640px) {
+  .lvai-overlay { padding: 0; align-items: stretch; } .lvai-box { max-height: 100vh; border-radius: 0; width: 100%; }
+  .lvai-table table, .lvai-table thead, .lvai-table tbody, .lvai-table tr, .lvai-table td { display: block; } .lvai-table thead { display: none; }
+  .lvai-table tr { border-top: 1px solid var(--lline); padding: 8px 6px; display: grid; grid-template-columns: auto 1fr 1fr; gap: 6px; align-items: center; }
+  .lvai-table td { border: 0; padding: 0; } .lvai-table td.txc { grid-column: 1 / -1; order: 5; } .lvai-table td.act { grid-column: 1 / -1; order: 6; display: flex; flex-wrap: wrap; gap: 4px; }
+  .lvai-table input.tm { width: 100%; } .lvai-table input.tx { min-width: 0; } .lvai-box footer { flex-direction: column; align-items: stretch; } .lvai-box footer .lvai-btn { justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .lvai-bar i { transition: none; } }

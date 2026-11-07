@@ -1,0 +1,5 @@
+dev/www/
+node_modules/
+__pycache__/
+*.pyc
+.vercel

@@ -1,0 +1,11 @@
+{
+  "name": "lyravox",
+  "version": "1.1.0",
+  "description": "LYRAVOX — lyric motion video studio by NexVora Lab's Ofc",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "python3 build.py",
+    "serve": "python3 -m http.server 8800 --directory public"
+  }
+}

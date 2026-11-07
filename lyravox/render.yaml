@@ -1,0 +1,27 @@
+# Render Blueprint — deploys the AI backend. The static frontend stays on Vercel (see README, "Connect the frontend").
+# Render dashboard: New > Blueprint > pick this repository. No secrets are required anywhere.
+#
+# Plan notes (these numbers are guidance, NOT measured on Render by the authors):
+#   free     512 MB, shared CPU, sleeps when idle  -> use WHISPER_MODEL=tiny; slow, and Bangla/Hindi accuracy is poor with tiny
+#   starter  512 MB, always on                      -> WHISPER_MODEL=base
+#   standard 2 GB                                    -> WHISPER_MODEL=small (much better Bangla/Hindi), or Demucs (INSTALL_DEMUCS=1)
+services:
+  - type: web
+    name: lyravox-ai
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: WHISPER_MODEL
+        value: tiny
+      - key: MAX_UPLOAD_MB
+        value: "25"
+      - key: MAX_DURATION_S
+        value: "600"
+      - key: MAX_CONCURRENT_JOBS
+        value: "1"
+      - key: ALLOWED_ORIGINS
+        value: https://lyravox.vercel.app      # CHANGE to your Vercel domain (comma separated for several)

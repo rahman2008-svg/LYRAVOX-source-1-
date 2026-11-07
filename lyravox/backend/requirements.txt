@@ -1,0 +1,6 @@
+# LYRAVOX AI backend — runtime
+fastapi>=0.110,<1
+uvicorn[standard]>=0.29,<1
+python-multipart>=0.0.9
+faster-whisper>=1.0.3,<2
+# system packages required (not pip): ffmpeg (includes ffprobe)
